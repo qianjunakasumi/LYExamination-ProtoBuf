@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "git.qianjunakasumi.ren/lyexamination/protobuf";
+
+service LYExamination {
+    rpc AccountWechatLogin(WechatLoginReq) returns (WechatLoginRes) {}
+    rpc AccountWechatMonitor(WechatMonitorReq) returns (stream WechatMonitorRes) {}
+}
+
+message WechatLoginReq {}
+
+message  WechatLoginRes {
+    string qr_code = 1;
+}
+
+message WechatMonitorReq {}
+
+message  WechatMonitorRes {
+    uint32 status = 1;
+}
