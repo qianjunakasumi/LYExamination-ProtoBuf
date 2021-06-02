@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "git.qianjunakasumi.ren/lyexamination/protobuf";
+option go_package = "git.qianjunakasumi.ren/lyexamination/api/lyexamination";
 
 service LYExamination {
     rpc AccountWechatLogin(WechatLoginReq) returns (WechatLoginRes) {}
