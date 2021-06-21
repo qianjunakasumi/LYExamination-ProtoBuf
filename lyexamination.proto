@@ -1,20 +1,16 @@
 syntax = "proto3";
 
-option go_package = "git.qianjunakasumi.ren/lyexamination/api/lyexamination";
+option go_package = "github.com/lyexamination/api";
 
 service LYExamination {
-    rpc AccountWechatLogin(WechatLoginReq) returns (WechatLoginRes) {}
-    rpc AccountWechatMonitor(WechatMonitorReq) returns (stream WechatMonitorRes) {}
+    rpc Login(LoginReq) returns (LoginRsp) {}
 }
 
-message WechatLoginReq {}
-
-message  WechatLoginRes {
-    string qr_code = 1;
+message LoginReq {
+    string phone = 1;
+    string pwd = 2;
 }
 
-message WechatMonitorReq {}
-
-message  WechatMonitorRes {
-    uint32 status = 1;
+message LoginRsp {
+    string session = 1;
 }
