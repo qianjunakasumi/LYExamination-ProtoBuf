@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "github.com/lyexamination/api";
+option go_package = "github.com/lyexamination/api/main";
 
 service LYExamination {
     rpc Login(LoginReq) returns (LoginRsp) {}
